@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -r .git)"
+    ],
+    "additionalDirectories": [
+      "d:\\wp\\wordpress-docker\\wp-content\\plugins\\libro-reclamaciones-peru\\.git"
+    ]
+  }
+}

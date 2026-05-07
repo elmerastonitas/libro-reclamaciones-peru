@@ -1,0 +1,12 @@
+{
+    "name": "antigravity/libro-reclamaciones-peru",
+    "description": "Plugin de Libro de Reclamaciones para Perú",
+    "require": {
+        "tecnickcom/tcpdf": "^6.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "LRP\\": "includes/"
+        }
+    }
+}

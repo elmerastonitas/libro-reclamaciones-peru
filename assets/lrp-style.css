@@ -1,0 +1,269 @@
+.lrp-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    border: 1px solid #ddd;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-radius: 8px;
+}
+
+/* WIZARD PROGRESS BAR */
+.lrp-progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Connecting Line */
+.lrp-progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 20px; /* Center of 40px circle */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #e0e0e0;
+    z-index: 0;
+}
+
+.lrp-progress-item {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background: transparent; /* Changed from #fff to transparent */
+    width: 40px; /* Globally set to 40px (circle width) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lrp-step-circle {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #999;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+    background-color: #fff; /* Ensure it covers the line */
+}
+
+.lrp-step-label {
+    font-size: 12px;
+    color: #999;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Active State */
+.lrp-progress-item.active .lrp-step-circle {
+    border-color: #28a745;
+    background: #28a745;
+    color: #fff;
+}
+.lrp-progress-item.active .lrp-step-label {
+    color: #28a745;
+}
+
+/* Steps Content */
+.lrp-step {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.lrp-step-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+/* BUTTONS */
+.lrp-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.lrp-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    text-transform: uppercase;
+}
+.lrp-next-btn, .lrp-submit-btn {
+    background: #28a745; /* Green */
+    color: #fff;
+}
+.lrp-next-btn:hover, .lrp-submit-btn:hover {
+    background: #218838;
+}
+.lrp-prev-btn {
+    background: #6c757d; /* Gray */
+    color: #fff;
+}
+.lrp-prev-btn:hover {
+    background: #5a6268;
+}
+
+/* FORM ELEMENTS RESET */
+.lrp-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+.lrp-col {
+    flex: 1;
+    min-width: 220px;
+}
+.lrp-col label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #333;
+    text-align: left;
+}
+.lrp-col input, .lrp-col select, .lrp-full textarea, .lrp-full input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #495057;
+}
+.lrp-col input:focus, .lrp-col select:focus, .lrp-full textarea:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+.lrp-full {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.lrp-full label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #333;
+    text-align: left;
+}
+.lrp-full textarea {
+    height: 100px;
+}
+
+/* Specifics */
+.lrp-checkbox-group label {
+    display: flex !important; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.lrp-checkbox-group input[type="checkbox"] {
+    margin: 0 !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.lrp-radio-group {
+    background: #fff;
+    padding: 0;
+}
+.lrp-radio-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: normal !important;
+    cursor: pointer;
+    font-size: 14px;
+}
+.lrp-radio-option input {
+    margin-right: 10px;
+    width: 18px !important;
+    height: 18px !important;
+    margin-top: 0;
+}
+
+.lrp-success {
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #c3e6cb;
+}
+
+/* SUCCESS MESSAGE NEW */
+.lrp-success-wrapper {
+    text-align: center;
+    padding: 40px 20px;
+}
+.lrp-success-icon {
+    margin-bottom: 25px;
+    animation: scaleCheck 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes scaleCheck {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.lrp-success-title {
+    color: #333;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+.lrp-success-text p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+.lrp-success-sub {
+    font-size: 14px !important;
+    color: #888 !important;
+}
+
+/* Turnstile Widget */
+.lrp-turnstile-wrapper {
+    text-align: left;
+    margin: 20px 0 10px 0;
+}
+.lrp-turnstile-error {
+    color: #dc3545;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* Override WooCommerce global input[type=number] { max-width:58px } */
+.lrp-form-container input[type="number"] {
+    max-width: none !important;
+    width: 100% !important;
+}
